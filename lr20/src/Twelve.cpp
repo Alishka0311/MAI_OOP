@@ -12,7 +12,7 @@ Twelve::Twelve(const size_t &n, unsigned char t) {
     if (!isTwelveBase(t)) throw std::logic_error("char should be in twelve-base system");//если не 12рич сс, то выброс исключение
     
     if (t == '0') {
-        _array = new unsigned char[1]{'0'};//указатель на массив типа un... 
+        _array = new unsigned char[1]{'0'}; 
         _size = 1;//если t это 0, то просто выделяем память для 1 элемента и присваив ему значение 0
     } else {
         _array = new unsigned char[n];//выделяем память для n элементов
@@ -46,7 +46,7 @@ Twelve::Twelve(const std::initializer_list<unsigned char> &t) {
         _array = new unsigned char[_size];//выделяем память для size элементов
         int i = 0;
         for (auto it = t.end() - 1; it != t.begin() - 1 + leadingZeros; --it) { // Копируем символы без ведущих нулей
-            _array[i++] = *it;//разыменование итератора
+            _array[i++] = *it; 
         }
     }
 }
@@ -81,7 +81,7 @@ Twelve::Twelve(const std::string &t) {
 // Конструктор копирования
 Twelve::Twelve(const Twelve &other) {
     _size = other._size;//Переменной _size присваивается значение переменной _size другого объекта othe
-    _array = new unsigned char[_size];// _array - указатель на выделенную память для массива
+    _array = new unsigned char[_size]; 
 
     for (size_t i = 0; i < _size; i++) {
         _array[i] = other._array[i];
@@ -103,7 +103,7 @@ Twelve::~Twelve() noexcept {
 }
 
 // Метод  сложения(возвращает новый объект)
-Twelve Twelve::add(const Twelve &other) const {//ссылка на const объект
+Twelve Twelve::add(const Twelve &other) const { 
     size_t max_size = std::max(_size, other._size) + 1;//макс размер из двух массивов + перенос
     unsigned char *result_array = new unsigned char[max_size];//Выделяется память для массива result_array размером max_size элементов типа unsigned char
     size_t i = 0;//индекс для прохода по массивам
