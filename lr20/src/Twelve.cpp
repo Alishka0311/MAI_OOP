@@ -4,23 +4,22 @@
 
 // Конструктор по умолчанию
 Twelve::Twelve() : _size(1), _array(new unsigned char[1]) {//список инициализации членов класса
-    _array[0] = '0';//тело конструктора
+    _array[0] = '0';
 }
 
-
- // Конструктор с параметром размера и начальным значением
+// Конструктор с параметром размера и начальным значением
 Twelve::Twelve(const size_t &n, unsigned char t) {
-    if (!isTwelveBase(t)) throw std::logic_error("char should be in twelve-base system");//если не 12рич сс, то выбрас исключение
+    if (!isTwelveBase(t)) throw std::logic_error("char should be in twelve-base system");//если не 12рич сс, то выброс исключение
     
     if (t == '0') {
-        _array = new unsigned char[1]{'0'};
+        _array = new unsigned char[1]{'0'};//указатель на массив типа un... 
         _size = 1;//если t это 0, то просто выделяем память для 1 элемента и присваив ему значение 0
     } else {
         _array = new unsigned char[n];//выделяем память для n элементов
         for (size_t i = 0; i < n; i++) {//проходимя по массиву c помощью индекса i и записываем t
             _array[i] = t;
         }
-        _size = n;//размер днных
+        _size = n;
     }
 }
 
@@ -29,13 +28,12 @@ Twelve::Twelve(const std::initializer_list<unsigned char> &t) {
     size_t leadingZeros = 0;//подсчет кол-ва ведущих нулей в списке инициализ
     bool countZeros = true;//нужно ли продолжать подсчет вед нулей?
 
-    // Определяем количество ведущих нулей и проверяем символы
-    for (unsigned char M : t) {//проход по всем элементам списка инициализации
-        if (!isTwelveBase(M)) throw std::logic_error("not twelve-base system");
-        if (countZeros && M == '0') {
+    for (unsigned char A : t) { // Определяем количество ведущих нулей и проверяем символы
+        if (!isTwelveBase(A)) throw std::logic_error("not twelve-base system");//проход по всем элементам списка инициализации
+        if (countZeros && A == '0') {
             leadingZeros++;
         } else {
-            countZeros = false;
+            countZeros = false;//подсчет ведущих нулей прекращается
         }
     }
 
@@ -45,11 +43,10 @@ Twelve::Twelve(const std::initializer_list<unsigned char> &t) {
         _array = new unsigned char[1]{'0'};
         _size = 1;
     } else {
-        _array = new unsigned char[_size]; //выделяем память для size элементов
+        _array = new unsigned char[_size];//выделяем память для size элементов
         int i = 0;
-        // Копируем символы без ведущих нулей
-        for (auto it = t.end() - 1; it != t.begin() - 1 + leadingZeros; --it) {
-            _array[i++] = *it;
+        for (auto it = t.end() - 1; it != t.begin() - 1 + leadingZeros; --it) { // Копируем символы без ведущих нулей
+            _array[i++] = *it;//разыменование итератора
         }
     }
 }
@@ -59,8 +56,7 @@ Twelve::Twelve(const std::string &t) {
     size_t leadingZeros = 0;
     bool countZeros = true;
 
-    // Определяем количество ведущих нулей и проверяем символы
-    for (size_t i = 0; i < t.size(); i++) {
+    for (size_t i = 0; i < t.size(); i++) {// Определяем количество ведущих нулей и проверяем символы
         if (!isTwelveBase(t[i])) throw std::logic_error("not twelve-base system");
         if (countZeros && t[i] == '0') {
             leadingZeros++;
@@ -84,7 +80,7 @@ Twelve::Twelve(const std::string &t) {
 
 // Конструктор копирования
 Twelve::Twelve(const Twelve &other) {
-    _size = other._size;//Переменной _size присваивается значение переменной _size другого объекта othe
+    _size = other._size;//Переменной _size присваивается значение переменной _size другого объекта othe
     _array = new unsigned char[_size];// _array - указатель на выделенную память для массива
 
     for (size_t i = 0; i < _size; i++) {
@@ -106,40 +102,9 @@ Twelve::~Twelve() noexcept {
     delete[] _array;
 }
 
-// Оператор копирующего присваивания
-Twelve& Twelve::operator=(const Twelve &other) {
-    if (this == &other) {//явл ли текущий объект тем же объектом что и other
-        throw std::runtime_error("Self-assignment detected");
-    }
-
-    delete[] _array;
-    _size = other._size;
-    _array = new unsigned char[_size];
-
-    for (size_t i = 0; i < _size; i++) {
-        _array[i] = other._array[i];
-    }
-
-    return *this;//возвр ссылку на текущий объект
-}
-
-// Оператор перемещающего присваивания
-Twelve& Twelve::operator=(Twelve &&other) noexcept {
-    if (this == &other) return *this;//возвращаем ссылку на текущ объект
-
-    delete[] _array;//освобождаем память, чтобы не было утечки
-    _size = other._size;
-    _array = other._array;
-
-    other._size = 0;//объект other больше не считается владельцем памяти
-    other._array = nullptr;//указатель array=nullptr чтобы other больше не ссылался на память которую он передал текущему объекту
-
-    return *this;
-}
-
-// Оператор сложения(возвращает новый объект)
-Twelve Twelve::operator+(const Twelve &other) const {//ссылка на const объект
-    size_t max_size = std::max(_size, other._size) + 1; //макс размер из двух массивов + перенос
+// Метод  сложения(возвращает новый объект)
+Twelve Twelve::add(const Twelve &other) const {//ссылка на const объект
+    size_t max_size = std::max(_size, other._size) + 1;//макс размер из двух массивов + перенос
     unsigned char *result_array = new unsigned char[max_size];//Выделяется память для массива result_array размером max_size элементов типа unsigned char
     size_t i = 0;//индекс для прохода по массивам
     int temp = 0;//хранит значение, которое переносится из текущего разряда в следующий
@@ -149,7 +114,7 @@ Twelve Twelve::operator+(const Twelve &other) const {//ссылка на const �
         int digit2 = 0;
 
         if (i < _size) {
-            digit1 = charToDigit(_array[i]);//символ _array[i] преобразуем в цифру
+            digit1 = charToDigit(_array[i]);;//символ _array[i] преобразуем в цифру
         }
 
         if (i < other._size) {
@@ -163,23 +128,22 @@ Twelve Twelve::operator+(const Twelve &other) const {//ссылка на const �
         ++i;//переход к след разряду
     }
 
-    Twelve result;//создаем новый объект типа twelve
-    result._array = result_array;
+    Twelve result;
+    result._array = result_array;//указатель на массив result_array присваиваем члену _array результ объекта
     result._size = i;
     return result;
 }
 
-// Оператор вычитания
-Twelve Twelve::operator-(const Twelve &other) const {
-    if (other > *this)
+// Метод для вычитания
+Twelve Twelve::subtract(const Twelve &other) const {
+    if (other.greaterThan(*this))
         throw std::range_error("a - b < 0");//выбрас искл, чтобы предотвратить вычитание, приводящее к отриц результату
 
     size_t max_size = std::max(_size, other._size);//макс размер из двух массивов(размер рез массива)
-    unsigned char *result_array = new unsigned char[max_size];////Выделяется память для массива result_array размером max_size элементов типа unsigned char
+    unsigned char *result_array = new unsigned char[max_size];//Выделяется память для массива result_array размером max_size элементов типа unsigned cha
     size_t i = 0;//индекс для прохода по массивам
     int borrow = 0;//заимствование при вычитании
-
-    // Выполняем вычитание с учетом заимствования
+// Выполняем вычитание с учетом заимствования
     while (i < _size) {//цикл продолжается, пока не будут обработаны все элементы массива _array
         int digit1 = charToDigit(_array[i]);//преобр символ в цифру
         int digit2 = (i < other._size) ? charToDigit(other._array[i]) : 0;
@@ -187,7 +151,7 @@ Twelve Twelve::operator-(const Twelve &other) const {
         int diff = digit1 - digit2 - borrow;//разность между цифрами текущего разряда и заимствованием borrow
 
         if (diff < 0) {
-            diff += 12;  // Заимствуем 12
+            diff += 12;// Заимствуем 12
             borrow = 1;
         } else {
             borrow = 0;
@@ -196,18 +160,15 @@ Twelve Twelve::operator-(const Twelve &other) const {
         result_array[i] = digitToChar(diff);//результат разности преобразуем обратно в символ и сохр в массиве result_array
         ++i;
     }
-
-    // Находим фактический размер числа, не удаляя все нули 
+ // Находим фактический размер числа, не удаляя все нули 
     size_t result_size = max_size;
     while (result_size > 1 && result_array[result_size - 1] == '0') {//цикл продолжается, пока result_size больше 1 и последний элемент массива result_array равен '0'
         --result_size;
     }
-
-    // Создаем результат с правильным размером
+ // Создаем результат с правильным размером
     Twelve result;
     result._array = new unsigned char[result_size];
     result._size = result_size;
-
     // Копируем результат в объект результата
     for (size_t j = 0; j < result_size; ++j) {
         result._array[j] = result_array[j];
@@ -217,21 +178,8 @@ Twelve Twelve::operator-(const Twelve &other) const {
     return result;
 }
 
-
-// Оператор сложения с присваиванием
-Twelve& Twelve::operator+=(const Twelve &other) {
-    *this = *this + other;//сложение текущего объекта с other, результат сложения присваив текущ объекту(*this)
-    return *this;//ссылка на текущ объект
-}
-
-// Оператор вычитания с присваиванием
-Twelve& Twelve::operator-=(const Twelve &other) {
-    *this = *this - other;
-    return *this;
-}
-
-// Оператор проверки на равенство
-bool Twelve::operator==(const Twelve &other) const {
+// Метод для проверки на равенство
+bool Twelve::equals(const Twelve &other) const {
     if (_size != other._size) {
         return false;
     }
@@ -243,13 +191,13 @@ bool Twelve::operator==(const Twelve &other) const {
     return true;
 }
 
-// Оператор проверки на неравенство
-bool Twelve::operator!=(const Twelve &other) const {
-    return !(*this == other);
+// Метод для проверки на неравенство
+bool Twelve::notEquals(const Twelve &other) const {
+    return !equals(other);
 }
 
-// Оператор проверки на "меньше"
-bool Twelve::operator<(const Twelve &other) const {
+// Метод для проверки на "меньше"
+bool Twelve::lessThan(const Twelve &other) const {
     if (_size < other._size)
         return true;
     else if (_size > other._size)
@@ -258,13 +206,13 @@ bool Twelve::operator<(const Twelve &other) const {
         return false;
 
     size_t i = _size - 1;
-    while (i > 0 && _array[i] == other._array[i])//проход по элементам массивов _array (текущего объекта) и other._array объекта other с конца до начала
+    while (i > 0 && _array[i] == other._array[i])//проход по элементам массивов _array (текущего объекта) и other._array объекта other с конца до начала
         --i;
     return _array[i] < other._array[i];
 }
 
-// Оператор проверки на "больше"
-bool Twelve::operator>(const Twelve &other) const {
+// Метод для проверки на "больше"
+bool Twelve::greaterThan(const Twelve &other) const {
     if (_size > other._size)
         return true;
     else if (_size < other._size)
@@ -278,22 +226,22 @@ bool Twelve::operator>(const Twelve &other) const {
     return _array[i] > other._array[i];
 }
 
-// Оператор проверки на "меньше или равно"
-bool Twelve::operator<=(const Twelve &other) const {
-    return (*this < other) || (*this == other);
+// Метод для проверки на "меньше или равно"
+bool Twelve::lessThanOrEqual(const Twelve &other) const {
+    return lessThan(other) || equals(other);
 }
 
-// Оператор проверки на "больше или равно"
-bool Twelve::operator>=(const Twelve &other) const {
-    return (*this > other) || (*this == other);
+// Метод для проверки на "больше или равно"
+bool Twelve::greaterThanOrEqual(const Twelve &other) const {
+    return greaterThan(other) || equals(other);
 }
 
 // Метод для вывода двенадцатеричного числа
 std::ostream &Twelve::print(std::ostream &os) const {
-    for (size_t i = _size; i > 0; --i) { // проход по всем элементам массива _array (текущего объекта) с конца к началу
-        os << _array[i - 1]; // вывод в поток os
+    for (size_t i = _size; i > 0; --i) {// проход по всем элементам массива _array (текущего объекта) с конца к началу
+        os << _array[i - 1];// вывод в поток os
     }
-    return os; // Возвращается ссылка на поток вывода os
+    return os;// Возвращается ссылка на поток вывода os
 }
 
 // Метод для получения размера числа

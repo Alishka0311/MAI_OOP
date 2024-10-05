@@ -29,41 +29,29 @@ public:
     // Деструктор
     ~Twelve() noexcept;
 
-    // Оператор копирующего присваивания
-    Twelve& operator=(const Twelve &other);
+    // Метод для сложения
+    Twelve add(const Twelve &other) const;
 
-    // Оператор перемещающего присваивания
-    Twelve& operator=(Twelve &&other) noexcept;
+    // Метод для вычитания
+    Twelve subtract(const Twelve &other) const;
 
-    // Оператор сложения
-    Twelve operator+(const Twelve &other) const;
+    // Метод для проверки на равенство
+    bool equals(const Twelve &other) const;
 
-    // Оператор вычитания
-    Twelve operator-(const Twelve &other) const;
+    // Метод для проверки на неравенство
+    bool notEquals(const Twelve &other) const;
 
-    // Оператор сложения с присваиванием
-    Twelve& operator+=(const Twelve &other);
+    // Метод для проверки на "меньше"
+    bool lessThan(const Twelve &other) const;
 
-    // Оператор вычитания с присваиванием
-    Twelve& operator-=(const Twelve &other);
+    // Метод для проверки на "больше"
+    bool greaterThan(const Twelve &other) const;
 
-    // Оператор проверки на равенство
-    bool operator==(const Twelve &other) const;
+    // Метод для проверки на "меньше или равно"
+    bool lessThanOrEqual(const Twelve &other) const;
 
-    // Оператор проверки на неравенство
-    bool operator!=(const Twelve &other) const;
-
-    // Оператор проверки на "меньше"
-    bool operator<(const Twelve &other) const;
-
-    // Оператор проверки на "больше"
-    bool operator>(const Twelve &other) const;
-
-    // Оператор проверки на "меньше или равно"
-    bool operator<=(const Twelve &other) const;
-
-    // Оператор проверки на "больше или равно"
-    bool operator>=(const Twelve &other) const;
+    // Метод для проверки на "больше или равно"
+    bool greaterThanOrEqual(const Twelve &other) const;
 
     // Метод для вывода двенадцатеричного числа
     std::ostream &print(std::ostream &os) const;
@@ -78,9 +66,9 @@ private:
     size_t _size;
     unsigned char *_array;
 
-    static bool isTwelveBase(char M) {
-        return (M >= '0' && M <= '9') || (M >= 'A' && M <= 'B');
-    }//явл ли допустимой
+    static bool isTwelveBase(char A) {
+        return (A >= '0' && A <= '9') || (A >= 'A' && A <= 'B');
+    }
 
     static int charToDigit(char c) {
         if (c >= '0' && c <= '9') return c - '0';

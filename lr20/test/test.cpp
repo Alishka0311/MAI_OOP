@@ -56,31 +56,11 @@ TEST(TwelveTest, ConstructorWithString) {
     EXPECT_EQ(num.getData()[0], '3'); 
 }
 
-// Тесты для оператора копирующего присваивания
-TEST(TwelveTest, CopyAssignmentOperator) {
-    Twelve num1("123");
-    Twelve num2 = num1;
-    EXPECT_EQ(num2.getSize(), 3); // Проверка, что размер объекта равен 3
-    EXPECT_EQ(num2.getData()[2], '1');  
-    EXPECT_EQ(num2.getData()[1], '2');  
-    EXPECT_EQ(num2.getData()[0], '3');  
-}
-
-// Тесты для оператора перемещающего присваивания
-TEST(TwelveTest, MoveAssignmentOperator) {
-    Twelve num1("123");
-    Twelve num2 = std::move(num1);
-    EXPECT_EQ(num2.getSize(), 3); // Проверка, что размер объекта равен 3
-    EXPECT_EQ(num2.getData()[2], '1');  
-    EXPECT_EQ(num2.getData()[1], '2');  
-    EXPECT_EQ(num2.getData()[0], '3');  
-}
-
 // Тесты для граничных значений
 TEST(TwelveTest, BoundaryValues) {
     Twelve num1("B");
     Twelve num2("1");
-    Twelve num3 = num1 + num2;
+    Twelve num3 = num1.add(num2);
 
     EXPECT_EQ(num3.getSize(), 2); // Проверка, что размер объекта равен 2
     EXPECT_EQ(num3.getData()[1], '1'); 
@@ -91,7 +71,7 @@ TEST(TwelveTest, BoundaryValues) {
 TEST(TwelveTest, LargeNumbers) {
     Twelve num1("AAAA");
     Twelve num2("BBBB");
-    Twelve num3 = num1 + num2;
+    Twelve num3 = num1.add(num2);
 
     EXPECT_EQ(num3.getSize(), 5); // Проверка, что размер объекта равен 5
     EXPECT_EQ(num3.getData()[4], '1');  
@@ -105,25 +85,25 @@ TEST(TwelveTest, LargeNumbers) {
 TEST(TwelveTest, Addition) {
     Twelve num1("1111");
     Twelve num2("111");
-    num1 += num2;
-    EXPECT_EQ(num1.getSize(), 4); // Проверка, что размер объекта равен 4
-    EXPECT_EQ(num1.getData()[3], '1');  
-    EXPECT_EQ(num1.getData()[2], '2');  
-    EXPECT_EQ(num1.getData()[1], '2');  
-    EXPECT_EQ(num1.getData()[0], '2');  
+    Twelve num3 = num1.add(num2);
+    EXPECT_EQ(num3.getSize(), 4); // Проверка, что размер объекта равен 4
+    EXPECT_EQ(num3.getData()[3], '1');  
+    EXPECT_EQ(num3.getData()[2], '2');  
+    EXPECT_EQ(num3.getData()[1], '2');  
+    EXPECT_EQ(num3.getData()[0], '2');  
 }
 
 // Тесты для вычитания
 TEST(TwelveTest, Subtraction) {
     Twelve num1("2222");
     Twelve num2("111");
-    num1 -= num2;
+    Twelve num3 = num1.subtract(num2);
 
-    EXPECT_EQ(num1.getSize(), 4); // Проверка, что размер объекта равен 4
-    EXPECT_EQ(num1.getData()[3], '2');  
-    EXPECT_EQ(num1.getData()[2], '1');  
-    EXPECT_EQ(num1.getData()[1], '1'); 
-    EXPECT_EQ(num1.getData()[0], '1');  
+    EXPECT_EQ(num3.getSize(), 4); // Проверка, что размер объекта равен 4
+    EXPECT_EQ(num3.getData()[3], '2');  
+    EXPECT_EQ(num3.getData()[2], '1');  
+    EXPECT_EQ(num3.getData()[1], '1'); 
+    EXPECT_EQ(num3.getData()[0], '1');  
 }
 
 // Тесты для равенства
@@ -132,8 +112,8 @@ TEST(TwelveTest, Equality) {
     Twelve num2("1111");
     Twelve num3("2222");
 
-    EXPECT_TRUE(num1 == num2);
-    EXPECT_FALSE(num1 == num3);
+    EXPECT_TRUE(num1.equals(num2));
+    EXPECT_FALSE(num1.equals(num3));
 }
 
 // Тесты для сравнения больше/меньше
@@ -141,17 +121,9 @@ TEST(TwelveTest, Comparison) {
     Twelve num1("1111");
     Twelve num2("2222");
 
-    EXPECT_TRUE(num1 < num2);
-    EXPECT_FALSE(num1 > num2);
-    EXPECT_TRUE(num1 != num2);
-}
-
-// Тест на исключение при вычитании
-TEST(TwelveTest, SubtractionException) {
-    Twelve num1("111");
-    Twelve num2("2222");
-
-    EXPECT_THROW(num1 -= num2, std::runtime_error);
+    EXPECT_TRUE(num1.lessThan(num2));
+    EXPECT_FALSE(num1.greaterThan(num2));
+    EXPECT_TRUE(num1.notEquals(num2));
 }
 
 // Тест на исключение при недопустимых символах
@@ -159,31 +131,22 @@ TEST(TwelveTest, InvalidCharacter) {
     EXPECT_THROW(Twelve num("1C2"), std::logic_error);
 }
 
-// Тест на самоприсваивание
-TEST(TwelveTest, SelfAssignment) {
-    Twelve num("1111");
-    EXPECT_THROW(num = num, std::runtime_error);
-}
-
-
 // Тесты для вычитания с заимствованием
 TEST(TwelveTest, SubtractionBorrow) {
     Twelve num1("1000"); 
     Twelve num2("1");    
-    Twelve num3 = num1 - num2;
+    Twelve num3 = num1.subtract(num2);
     EXPECT_EQ(num3.getSize(), 3);          
     EXPECT_EQ(num3.getData()[2], 'B');     
     EXPECT_EQ(num3.getData()[1], 'B');    
     EXPECT_EQ(num3.getData()[0], 'B');    
- 
 }
-
 
 // Тесты для сложения с нулем
 TEST(TwelveTest, AdditionWithZero) {
     Twelve num1("123");
     Twelve num2("0");
-    Twelve num3 = num1 + num2;
+    Twelve num3 = num1.add(num2);
     EXPECT_EQ(num3.getSize(), 3); 
     EXPECT_EQ(num3.getData()[2], '1'); 
     EXPECT_EQ(num3.getData()[1], '2'); 
@@ -194,7 +157,7 @@ TEST(TwelveTest, AdditionWithZero) {
 TEST(TwelveTest, SubtractionWithZero) {
     Twelve num1("123");
     Twelve num2("0");
-    Twelve num3 = num1 - num2;
+    Twelve num3 = num1.subtract(num2);
     EXPECT_EQ(num3.getSize(), 3); 
     EXPECT_EQ(num3.getData()[2], '1'); 
     EXPECT_EQ(num3.getData()[1], '2'); 
@@ -205,16 +168,16 @@ TEST(TwelveTest, SubtractionWithZero) {
 TEST(TwelveTest, ComparisonWithZero) {
     Twelve num1("0");
     Twelve num2("1");
-    EXPECT_TRUE(num1 < num2); // Проверка, что num1 меньше num2
-    EXPECT_FALSE(num1 > num2); // Проверка, что num1 не больше num2
-    EXPECT_TRUE(num1 != num2); // Проверка, что num1 не равен num2
+    EXPECT_TRUE(num1.lessThan(num2)); // Проверка, что num1 меньше num2
+    EXPECT_FALSE(num1.greaterThan(num2)); // Проверка, что num1 не больше num2
+    EXPECT_TRUE(num1.notEquals(num2)); // Проверка, что num1 не равен num2
 }
 
 // Тесты для сравнения с самим собой
 TEST(TwelveTest, ComparisonWithSelf) {
     Twelve num("123");
-    EXPECT_TRUE(num == num); // Проверка, что num равен самому себе
-    EXPECT_FALSE(num != num); // Проверка, что num не не равен самому себе
+    EXPECT_TRUE(num.equals(num)); // Проверка, что num равен самому себе
+    EXPECT_FALSE(num.notEquals(num)); // Проверка, что num не не равен самому себе
 }
 
 // Главная функция тестов
