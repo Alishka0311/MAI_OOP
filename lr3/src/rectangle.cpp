@@ -25,6 +25,15 @@ Rectangle& Rectangle::operator=(const Rectangle& other) {
     }
     return *this;
 }
+// Метод для получения вершин прямоугольника
+std::vector<std::pair<double, double>> Rectangle::vertices() const {
+    return {
+        {0, 0},
+        {width, 0},
+        {width, height},
+        {0, height}
+    };
+}
 
 // Оператор перемещения
 Rectangle& Rectangle::operator=(Rectangle&& other) noexcept {
@@ -44,8 +53,9 @@ Rectangle::operator double() const {
 
 // Геометрический центр
 std::pair<double, double> Rectangle::center() const {
-    return { width / 2, height / 2 }; // Центр прямоугольника
+    return { width / 2.0, height / 2.0 }; // Центр прямоугольника
 }
+
 
 // Оператор присваивания от базового класса
 Figure& Rectangle::operator=(const Figure& other) {
@@ -66,9 +76,14 @@ bool Rectangle::operator==(const Figure& other) const {
 }
 
 // Вывод информации о фигуре
-void Rectangle::print(std::ostream &os) const {
-    os << "Rectangle width: " << width << ", height: " << height << std::endl;
+void Rectangle::print(std::ostream& os) const {
+    os << "Rectangle width: " << width << ", height: " << height << "\nVertices: ";
+    for (const auto& vertex : vertices()) {
+        os << "(" << vertex.first << ", " << vertex.second << ") ";
+    }
+    os << std::endl;
 }
+
 
 // Чтение информации о фигуре
 void Rectangle::read(std::istream &is) {

@@ -251,12 +251,18 @@ CMakeFiles/main.dir/main.cpp.o: /workspaces/alinakaracarova/Desktop/oop/lr3/main
   /workspaces/alinakaracarova/Desktop/oop/lr3/include/figure.h \
   /usr/local/include/c++/14.2.0/utility \
   /usr/local/include/c++/14.2.0/bits/stl_relops.h \
+  /usr/local/include/c++/14.2.0/vector \
+  /usr/local/include/c++/14.2.0/bits/stl_vector.h \
+  /usr/local/include/c++/14.2.0/bits/stl_bvector.h \
+  /usr/local/include/c++/14.2.0/bits/vector.tcc \
   /workspaces/alinakaracarova/Desktop/oop/lr3/include/square.h \
   /workspaces/alinakaracarova/Desktop/oop/lr3/include/rectangle.h \
   /workspaces/alinakaracarova/Desktop/oop/lr3/include/trap.h
 
 
 /workspaces/alinakaracarova/Desktop/oop/lr3/include/square.h:
+
+/usr/local/include/c++/14.2.0/vector:
 
 /usr/local/include/c++/14.2.0/bits/stl_relops.h:
 
@@ -464,6 +470,8 @@ CMakeFiles/main.dir/main.cpp.o: /workspaces/alinakaracarova/Desktop/oop/lr3/main
 
 /usr/include/aarch64-linux-gnu/bits/floatn-common.h:
 
+/usr/local/include/c++/14.2.0/bits/vector.tcc:
+
 /usr/include/aarch64-linux-gnu/bits/locale.h:
 
 /usr/local/include/c++/14.2.0/string:
@@ -580,6 +588,8 @@ CMakeFiles/main.dir/main.cpp.o: /workspaces/alinakaracarova/Desktop/oop/lr3/main
 
 /usr/local/include/c++/14.2.0/ios:
 
+/usr/local/include/c++/14.2.0/bits/stl_bvector.h:
+
 /usr/local/lib/gcc/aarch64-linux-gnu/14.2.0/include/stdarg.h:
 
 /usr/include/aarch64-linux-gnu/bits/select.h:
@@ -591,6 +601,8 @@ CMakeFiles/main.dir/main.cpp.o: /workspaces/alinakaracarova/Desktop/oop/lr3/main
 /usr/include/aarch64-linux-gnu/bits/libc-header-start.h:
 
 /usr/local/include/c++/14.2.0/cctype:
+
+/usr/local/include/c++/14.2.0/bits/stl_vector.h:
 
 /usr/local/include/c++/14.2.0/bits/range_access.h:
 

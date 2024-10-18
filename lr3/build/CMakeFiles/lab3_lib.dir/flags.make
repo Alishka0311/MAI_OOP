@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/workspaces/alinakaracarova/Desktop/oop/lr3/include
 
-CXX_FLAGS =  -Werror=maybe-uninitialized -std=gnu++20
+CXX_FLAGS =  -Werror=maybe-uninitialized -Wno-psabi -std=gnu++20
 

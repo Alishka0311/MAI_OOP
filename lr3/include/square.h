@@ -1,7 +1,7 @@
 #pragma once
 #include "figure.h"
 #include <array>
-#include <utility>
+#include <vector>
 
 class Square : public Figure {
 private:
@@ -12,8 +12,8 @@ public:
 
     // Конструктор по стороне
     Square(double side);
-
-
+    //метод для получения вершин квадрата
+    std::vector<std::pair<double, double>> vertices() const override;
     // Конструктор копирования
     Square(const Square& other);
 

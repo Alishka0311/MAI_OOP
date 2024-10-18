@@ -38,8 +38,9 @@ Square::operator double() const {
 
 // Геометрический центр
 std::pair<double, double> Square::center() const {
-    return { side / 2, side / 2 }; // Центр квадрата
+    return { side / 2.0, side / 2.0 }; // Центр квадрата
 }
+
 
 // Оператор присваивания от базового класса
 Figure& Square::operator=(const Figure& other) {
@@ -48,6 +49,15 @@ Figure& Square::operator=(const Figure& other) {
         *this = *ptr;  // Используем наш оператор присваивания
     }
     return *this;
+}
+// Метод для получения вершин квадрата
+std::vector<std::pair<double, double>> Square::vertices() const {
+    return {
+        {0, 0},
+        {side, 0},
+        {side, side},
+        {0, side}
+    };
 }
 
 // Оператор сравнения
@@ -61,9 +71,12 @@ bool Square::operator==(const Figure& other) const {
 
 // Вывод информации о фигуре
 void Square::print(std::ostream &os) const {
-    os << "Square side: " << side << std::endl;
+    os << "Square side: " << side << "\nVertices: ";
+    for (const auto& vertex : vertices()) {
+        os << "(" << vertex.first << ", " << vertex.second << ") ";
+    }
+    os << std::endl;
 }
-
 // Чтение информации о фигуре
 void Square::read(std::istream &is) {
     std::cout << "Enter the side length of the square:\n";

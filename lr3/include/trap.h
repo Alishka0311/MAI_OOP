@@ -2,7 +2,7 @@
 #include "figure.h"
 #include <array>
 #include <utility>
-
+#include <vector>
 class Trapeze : public Figure {
 private:
     double base1; // Основание 1
@@ -15,8 +15,7 @@ public:
 
     // Конструктор с основанием и высотой
     Trapeze(double base1, double base2, double height);
-
-
+    std::vector<std::pair<double, double>> vertices() const override; // Метод для получения вершин
     // Конструктор копирования
     Trapeze(const Trapeze& other);
 

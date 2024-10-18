@@ -199,7 +199,12 @@ CMakeFiles/lab3_lib.dir/src/array.cpp.o: /workspaces/alinakaracarova/Desktop/oop
   /usr/local/include/c++/14.2.0/istream \
   /usr/local/include/c++/14.2.0/bits/istream.tcc \
   /usr/local/include/c++/14.2.0/utility \
-  /usr/local/include/c++/14.2.0/bits/stl_relops.h
+  /usr/local/include/c++/14.2.0/bits/stl_relops.h \
+  /usr/local/include/c++/14.2.0/vector \
+  /usr/local/include/c++/14.2.0/bits/stl_uninitialized.h \
+  /usr/local/include/c++/14.2.0/bits/stl_vector.h \
+  /usr/local/include/c++/14.2.0/bits/stl_bvector.h \
+  /usr/local/include/c++/14.2.0/bits/vector.tcc
 
 CMakeFiles/lab3_lib.dir/src/rectangle.cpp.o: /workspaces/alinakaracarova/Desktop/oop/lr3/src/rectangle.cpp \
   /usr/include/stdc-predef.h \
@@ -400,6 +405,11 @@ CMakeFiles/lab3_lib.dir/src/rectangle.cpp.o: /workspaces/alinakaracarova/Desktop
   /usr/local/include/c++/14.2.0/bits/istream.tcc \
   /usr/local/include/c++/14.2.0/utility \
   /usr/local/include/c++/14.2.0/bits/stl_relops.h \
+  /usr/local/include/c++/14.2.0/vector \
+  /usr/local/include/c++/14.2.0/bits/stl_uninitialized.h \
+  /usr/local/include/c++/14.2.0/bits/stl_vector.h \
+  /usr/local/include/c++/14.2.0/bits/stl_bvector.h \
+  /usr/local/include/c++/14.2.0/bits/vector.tcc \
   /usr/local/include/c++/14.2.0/array
 
 CMakeFiles/lab3_lib.dir/src/square.cpp.o: /workspaces/alinakaracarova/Desktop/oop/lr3/src/square.cpp \
@@ -601,6 +611,11 @@ CMakeFiles/lab3_lib.dir/src/square.cpp.o: /workspaces/alinakaracarova/Desktop/oo
   /usr/local/include/c++/14.2.0/bits/istream.tcc \
   /usr/local/include/c++/14.2.0/utility \
   /usr/local/include/c++/14.2.0/bits/stl_relops.h \
+  /usr/local/include/c++/14.2.0/vector \
+  /usr/local/include/c++/14.2.0/bits/stl_uninitialized.h \
+  /usr/local/include/c++/14.2.0/bits/stl_vector.h \
+  /usr/local/include/c++/14.2.0/bits/stl_bvector.h \
+  /usr/local/include/c++/14.2.0/bits/vector.tcc \
   /usr/local/include/c++/14.2.0/array
 
 CMakeFiles/lab3_lib.dir/src/trap.cpp.o: /workspaces/alinakaracarova/Desktop/oop/lr3/src/trap.cpp \
@@ -802,6 +817,11 @@ CMakeFiles/lab3_lib.dir/src/trap.cpp.o: /workspaces/alinakaracarova/Desktop/oop/
   /usr/local/include/c++/14.2.0/bits/istream.tcc \
   /usr/local/include/c++/14.2.0/utility \
   /usr/local/include/c++/14.2.0/bits/stl_relops.h \
+  /usr/local/include/c++/14.2.0/vector \
+  /usr/local/include/c++/14.2.0/bits/stl_uninitialized.h \
+  /usr/local/include/c++/14.2.0/bits/stl_vector.h \
+  /usr/local/include/c++/14.2.0/bits/stl_bvector.h \
+  /usr/local/include/c++/14.2.0/bits/vector.tcc \
   /usr/local/include/c++/14.2.0/array
 
 
@@ -812,6 +832,8 @@ CMakeFiles/lab3_lib.dir/src/trap.cpp.o: /workspaces/alinakaracarova/Desktop/oop/
 /workspaces/alinakaracarova/Desktop/oop/lr3/src/square.cpp:
 
 /usr/local/include/c++/14.2.0/array:
+
+/usr/local/include/c++/14.2.0/vector:
 
 /usr/local/include/c++/14.2.0/bits/stl_relops.h:
 
@@ -856,6 +878,8 @@ CMakeFiles/lab3_lib.dir/src/trap.cpp.o: /workspaces/alinakaracarova/Desktop/oop/
 /usr/local/include/c++/14.2.0/bits/istream.tcc:
 
 /usr/local/include/c++/14.2.0/cerrno:
+
+/usr/local/include/c++/14.2.0/bits/stl_uninitialized.h:
 
 /usr/include/aarch64-linux-gnu/bits/stdio_lim.h:
 
@@ -963,6 +987,8 @@ CMakeFiles/lab3_lib.dir/src/trap.cpp.o: /workspaces/alinakaracarova/Desktop/oop/
 
 /usr/include/aarch64-linux-gnu/bits/floatn-common.h:
 
+/usr/local/include/c++/14.2.0/bits/vector.tcc:
+
 /usr/include/aarch64-linux-gnu/bits/locale.h:
 
 /usr/local/include/c++/14.2.0/string:
@@ -1049,6 +1075,8 @@ CMakeFiles/lab3_lib.dir/src/trap.cpp.o: /workspaces/alinakaracarova/Desktop/oop/
 
 /usr/include/aarch64-linux-gnu/bits/pthreadtypes.h:
 
+/usr/local/include/c++/14.2.0/bits/stl_vector.h:
+
 /usr/local/include/c++/14.2.0/bits/range_access.h:
 
 /usr/local/include/c++/14.2.0/bits/iterator_concepts.h:
@@ -1064,6 +1092,8 @@ CMakeFiles/lab3_lib.dir/src/trap.cpp.o: /workspaces/alinakaracarova/Desktop/oop/
 /usr/include/wchar.h:
 
 /usr/include/aarch64-linux-gnu/bits/timex.h:
+
+/usr/local/include/c++/14.2.0/bits/stl_bvector.h:
 
 /usr/local/lib/gcc/aarch64-linux-gnu/14.2.0/include/stdarg.h:
 

@@ -356,15 +356,6 @@ gtest_force_shared_crt:BOOL=ON
 gtest_hide_internal_symbols:BOOL=OFF
 
 //Value Computed by CMake
-lab2_BINARY_DIR:STATIC=/workspaces/alinakaracarova/Desktop/oop/lr3/build
-
-//Value Computed by CMake
-lab2_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-lab2_SOURCE_DIR:STATIC=/workspaces/alinakaracarova/Desktop/oop/lr3
-
-//Value Computed by CMake
 lab3_BINARY_DIR:STATIC=/workspaces/alinakaracarova/Desktop/oop/lr3/build
 
 //Value Computed by CMake

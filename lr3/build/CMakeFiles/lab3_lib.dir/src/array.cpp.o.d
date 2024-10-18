@@ -182,4 +182,9 @@ CMakeFiles/lab3_lib.dir/src/array.cpp.o: \
  /usr/local/include/c++/14.2.0/istream \
  /usr/local/include/c++/14.2.0/bits/istream.tcc \
  /usr/local/include/c++/14.2.0/utility \
- /usr/local/include/c++/14.2.0/bits/stl_relops.h
+ /usr/local/include/c++/14.2.0/bits/stl_relops.h \
+ /usr/local/include/c++/14.2.0/vector \
+ /usr/local/include/c++/14.2.0/bits/stl_uninitialized.h \
+ /usr/local/include/c++/14.2.0/bits/stl_vector.h \
+ /usr/local/include/c++/14.2.0/bits/stl_bvector.h \
+ /usr/local/include/c++/14.2.0/bits/vector.tcc

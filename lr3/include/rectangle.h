@@ -3,6 +3,7 @@
 #include <array>
 #include <utility>
 #include <iostream>
+#include <vector>
 
 class Rectangle : public Figure {
 private:
@@ -15,8 +16,8 @@ public:
 
     // Конструктор с параметрами
     Rectangle(double width, double height);//высота ширина
-
-
+    // Метод для получения вершин прямоугольника
+    std::vector<std::pair<double, double>> vertices() const override;
     // Конструктор копирования
     Rectangle(const Rectangle& other);
 

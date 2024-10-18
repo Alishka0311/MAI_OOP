@@ -201,6 +201,11 @@ CMakeFiles/lab3_lib.dir/src/array.cpp.o
  /usr/local/include/c++/14.2.0/bits/istream.tcc
  /usr/local/include/c++/14.2.0/utility
  /usr/local/include/c++/14.2.0/bits/stl_relops.h
+ /usr/local/include/c++/14.2.0/vector
+ /usr/local/include/c++/14.2.0/bits/stl_uninitialized.h
+ /usr/local/include/c++/14.2.0/bits/stl_vector.h
+ /usr/local/include/c++/14.2.0/bits/stl_bvector.h
+ /usr/local/include/c++/14.2.0/bits/vector.tcc
 
 CMakeFiles/lab3_lib.dir/src/rectangle.cpp.o
  /workspaces/alinakaracarova/Desktop/oop/lr3/src/rectangle.cpp
@@ -402,6 +407,11 @@ CMakeFiles/lab3_lib.dir/src/rectangle.cpp.o
  /usr/local/include/c++/14.2.0/bits/istream.tcc
  /usr/local/include/c++/14.2.0/utility
  /usr/local/include/c++/14.2.0/bits/stl_relops.h
+ /usr/local/include/c++/14.2.0/vector
+ /usr/local/include/c++/14.2.0/bits/stl_uninitialized.h
+ /usr/local/include/c++/14.2.0/bits/stl_vector.h
+ /usr/local/include/c++/14.2.0/bits/stl_bvector.h
+ /usr/local/include/c++/14.2.0/bits/vector.tcc
  /usr/local/include/c++/14.2.0/array
 
 CMakeFiles/lab3_lib.dir/src/square.cpp.o
@@ -604,6 +614,11 @@ CMakeFiles/lab3_lib.dir/src/square.cpp.o
  /usr/local/include/c++/14.2.0/bits/istream.tcc
  /usr/local/include/c++/14.2.0/utility
  /usr/local/include/c++/14.2.0/bits/stl_relops.h
+ /usr/local/include/c++/14.2.0/vector
+ /usr/local/include/c++/14.2.0/bits/stl_uninitialized.h
+ /usr/local/include/c++/14.2.0/bits/stl_vector.h
+ /usr/local/include/c++/14.2.0/bits/stl_bvector.h
+ /usr/local/include/c++/14.2.0/bits/vector.tcc
  /usr/local/include/c++/14.2.0/array
 
 CMakeFiles/lab3_lib.dir/src/trap.cpp.o
@@ -806,5 +821,10 @@ CMakeFiles/lab3_lib.dir/src/trap.cpp.o
  /usr/local/include/c++/14.2.0/bits/istream.tcc
  /usr/local/include/c++/14.2.0/utility
  /usr/local/include/c++/14.2.0/bits/stl_relops.h
+ /usr/local/include/c++/14.2.0/vector
+ /usr/local/include/c++/14.2.0/bits/stl_uninitialized.h
+ /usr/local/include/c++/14.2.0/bits/stl_vector.h
+ /usr/local/include/c++/14.2.0/bits/stl_bvector.h
+ /usr/local/include/c++/14.2.0/bits/vector.tcc
  /usr/local/include/c++/14.2.0/array
 

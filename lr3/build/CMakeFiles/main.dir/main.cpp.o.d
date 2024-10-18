@@ -228,6 +228,10 @@ CMakeFiles/main.dir/main.cpp.o: \
  /workspaces/alinakaracarova/Desktop/oop/lr3/include/figure.h \
  /usr/local/include/c++/14.2.0/utility \
  /usr/local/include/c++/14.2.0/bits/stl_relops.h \
+ /usr/local/include/c++/14.2.0/vector \
+ /usr/local/include/c++/14.2.0/bits/stl_vector.h \
+ /usr/local/include/c++/14.2.0/bits/stl_bvector.h \
+ /usr/local/include/c++/14.2.0/bits/vector.tcc \
  /workspaces/alinakaracarova/Desktop/oop/lr3/include/square.h \
  /workspaces/alinakaracarova/Desktop/oop/lr3/include/rectangle.h \
  /workspaces/alinakaracarova/Desktop/oop/lr3/include/trap.h

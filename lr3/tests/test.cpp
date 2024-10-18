@@ -146,3 +146,57 @@ TEST(TrapezeTest, CopyAssignmentOperator) {
     Trapeze trap2(5.0, 3.0, 2.0);
     EXPECT_TRUE(trap1 == static_cast<const Figure&>(trap2));
 }
+ // Тест метода vertices для Rectangle
+TEST(RectangleTest, Vertices) {
+    Rectangle rect(4.0, 2.0);
+    auto vertices = rect.vertices();
+    EXPECT_EQ(vertices.size(), 4);  
+
+    EXPECT_DOUBLE_EQ(vertices[0].first, 0.0);
+    EXPECT_DOUBLE_EQ(vertices[0].second, 0.0);
+    
+    EXPECT_DOUBLE_EQ(vertices[1].first, 4.0);
+    EXPECT_DOUBLE_EQ(vertices[1].second, 0.0);
+    
+    EXPECT_DOUBLE_EQ(vertices[2].first, 4.0);
+    EXPECT_DOUBLE_EQ(vertices[2].second, 2.0);
+    
+    EXPECT_DOUBLE_EQ(vertices[3].first, 0.0);
+    EXPECT_DOUBLE_EQ(vertices[3].second, 2.0);
+}
+
+// Тест метода vertices для Square
+TEST(SquareTest, Vertices) {
+    Square sq(2.0);
+    auto vertices = sq.vertices();
+    EXPECT_EQ(vertices.size(), 4); 
+    EXPECT_DOUBLE_EQ(vertices[0].first, 0.0);
+    EXPECT_DOUBLE_EQ(vertices[0].second, 0.0);
+    
+    EXPECT_DOUBLE_EQ(vertices[1].first, 2.0);
+    EXPECT_DOUBLE_EQ(vertices[1].second, 0.0);
+    
+    EXPECT_DOUBLE_EQ(vertices[2].first, 2.0);
+    EXPECT_DOUBLE_EQ(vertices[2].second, 2.0);
+    
+    EXPECT_DOUBLE_EQ(vertices[3].first, 0.0);
+    EXPECT_DOUBLE_EQ(vertices[3].second, 2.0);
+}
+
+// Тест метода vertices для Trapeze
+TEST(TrapezeTest, Vertices) {
+    Trapeze trap(5.0, 3.0, 2.0);  
+    auto vertices = trap.vertices();
+    EXPECT_EQ(vertices.size(), 4); 
+    EXPECT_DOUBLE_EQ(vertices[0].first, 0.0);
+    EXPECT_DOUBLE_EQ(vertices[0].second, 0.0);
+    
+    EXPECT_DOUBLE_EQ(vertices[1].first, 5.0);
+    EXPECT_DOUBLE_EQ(vertices[1].second, 0.0);
+    
+    EXPECT_DOUBLE_EQ(vertices[2].first, 1.0); // Левый верхний угол
+    EXPECT_DOUBLE_EQ(vertices[2].second, 2.0); 
+    
+    EXPECT_DOUBLE_EQ(vertices[3].first, 4.0); // Правый верхний угол
+    EXPECT_DOUBLE_EQ(vertices[3].second, 2.0); 
+}

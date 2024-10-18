@@ -1,13 +1,14 @@
 #pragma once
 #include <iostream>
 #include <utility>
+#include <vector>
 
 class Figure {
 public:
     virtual operator double() const = 0; // Площадь
     virtual std::pair<double, double> center() const = 0; // Геометрический центр
     virtual ~Figure() = default;// Виртуальный деструктор по умолчанию
-
+    virtual std::vector<std::pair<double, double>> vertices() const = 0;
     virtual Figure& operator=(const Figure& other){// Оператор присваивания позволяет копировать состояние одного объекта в другой объект того же класса.
         return *this;
     }; 
@@ -22,7 +23,6 @@ public:
         figure.read(is);
         return is;
     }
-
     virtual void print(std::ostream &os) const = 0; // Вывод информации о фигуре
     virtual void read(std::istream &is) = 0; // Чтение информации о фигуре
 };

@@ -18,6 +18,14 @@ Trapeze::Trapeze(Trapeze&& other) noexcept
     other.base2 = 0;
     other.height = 0;
 }
+std::vector<std::pair<double, double>> Trapeze::vertices() const {
+    std::vector<std::pair<double, double>> verts;
+    verts.emplace_back(0.0, 0.0);                        // Левый нижний угол
+    verts.emplace_back(base1, 0.0);                    // Правый нижний угол
+    verts.emplace_back((base1 - base2) / 2.0, height); // Левый верхний угол
+    verts.emplace_back((base1 + base2) / 2.0, height); // Правый верхний угол
+    return verts;
+}
 
 // Оператор копирования
 Trapeze& Trapeze::operator=(const Trapeze& other) {
@@ -49,8 +57,9 @@ Trapeze::operator double() const {
 
 // Геометрический центр
 std::pair<double, double> Trapeze::center() const {
-    return { (base1 + base2) / 2, height / 2 }; // Центр трапеции
+    return { (base1 + base2) / 2.0, height / 2.0 }; // Центр трапеции
 }
+
 
 // Оператор присваивания от базового класса
 Figure& Trapeze::operator=(const Figure& other) {
@@ -60,7 +69,6 @@ Figure& Trapeze::operator=(const Figure& other) {
     }
     return *this;
 }
-
 // Оператор сравнения
 bool Trapeze::operator==(const Figure& other) const {
     const Trapeze* ptr = dynamic_cast<const Trapeze*>(&other);
@@ -72,8 +80,11 @@ bool Trapeze::operator==(const Figure& other) const {
 
 // Вывод информации о фигуре
 void Trapeze::print(std::ostream &os) const {
-    os << "Trapeze bases: " << base1 << ", " << base2 
-       << ", height: " << height << std::endl;
+    os << "Trapeze bases: " << base1 << ", " << base2 << ", height: " << height << "\nVertices: ";
+    for (const auto& vertex : vertices()) {
+        os << "(" << vertex.first << ", " << vertex.second << ") ";
+    }
+    os << std::endl;
 }
 
 // Чтение информации о фигуре
