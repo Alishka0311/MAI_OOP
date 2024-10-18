@@ -1,4 +1,4 @@
-# Install script for directory: /workspaces/alinakaracarova/Desktop/oop/lr20
+# Install script for directory: /workspaces/alinakaracarova/Desktop/oop/lr2
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,7 +44,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/workspaces/alinakaracarova/Desktop/oop/lr20/build/_deps/googletest-build/cmake_install.cmake")
+  include("/workspaces/alinakaracarova/Desktop/oop/lr2/build/_deps/googletest-build/cmake_install.cmake")
 
 endif()
 
@@ -56,5 +56,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/workspaces/alinakaracarova/Desktop/oop/lr20/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/workspaces/alinakaracarova/Desktop/oop/lr2/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

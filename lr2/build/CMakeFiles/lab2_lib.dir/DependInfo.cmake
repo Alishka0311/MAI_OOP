@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/workspaces/alinakaracarova/Desktop/oop/lr20/src/Twelve.cpp" "CMakeFiles/lab2_lib.dir/src/Twelve.cpp.o" "gcc" "CMakeFiles/lab2_lib.dir/src/Twelve.cpp.o.d"
+  "/workspaces/alinakaracarova/Desktop/oop/lr2/src/Twelve.cpp" "CMakeFiles/lab2_lib.dir/src/Twelve.cpp.o" "gcc" "CMakeFiles/lab2_lib.dir/src/Twelve.cpp.o.d"
   )
 
 # Targets to which this target links.

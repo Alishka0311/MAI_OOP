@@ -1,5 +1,5 @@
 CMakeFiles/lab2_exe.dir/main.cpp.o: \
- /workspaces/alinakaracarova/Desktop/oop/lr20/main.cpp \
+ /workspaces/alinakaracarova/Desktop/oop/lr2/main.cpp \
  /usr/include/stdc-predef.h /usr/local/include/c++/14.2.0/iostream \
  /usr/local/include/c++/14.2.0/bits/requires_hosted.h \
  /usr/local/include/c++/14.2.0/aarch64-linux-gnu/bits/c++config.h \
@@ -178,7 +178,7 @@ CMakeFiles/lab2_exe.dir/main.cpp.o: \
  /usr/local/include/c++/14.2.0/bits/ostream.tcc \
  /usr/local/include/c++/14.2.0/istream \
  /usr/local/include/c++/14.2.0/bits/istream.tcc \
- /workspaces/alinakaracarova/Desktop/oop/lr20/include/Twelve.h \
+ /workspaces/alinakaracarova/Desktop/oop/lr2/include/Twelve.h \
  /usr/local/include/c++/14.2.0/algorithm \
  /usr/local/include/c++/14.2.0/bits/stl_algo.h \
  /usr/local/include/c++/14.2.0/bits/algorithmfwd.h \

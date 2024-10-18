@@ -4,7 +4,7 @@
 # compile CXX with /usr/local/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -isystem /workspaces/alinakaracarova/Desktop/oop/lr20/build/_deps/googletest-src/googletest/include -isystem /workspaces/alinakaracarova/Desktop/oop/lr20/build/_deps/googletest-src/googletest
+CXX_INCLUDES = -isystem /workspaces/alinakaracarova/Desktop/oop/lr2/build/_deps/googletest-src/googletest/include -isystem /workspaces/alinakaracarova/Desktop/oop/lr2/build/_deps/googletest-src/googletest
 
 CXX_FLAGS =  -Werror=maybe-uninitialized -std=gnu++20
 

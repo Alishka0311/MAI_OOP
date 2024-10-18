@@ -1,4 +1,4 @@
-# Install script for directory: /workspaces/alinakaracarova/Desktop/oop/lr20/build/_deps/googletest-src
+# Install script for directory: /workspaces/alinakaracarova/Desktop/oop/lr2/build/_deps/googletest-src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,7 +44,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/workspaces/alinakaracarova/Desktop/oop/lr20/build/_deps/googletest-build/googlemock/cmake_install.cmake")
+  include("/workspaces/alinakaracarova/Desktop/oop/lr2/build/_deps/googletest-build/googlemock/cmake_install.cmake")
 
 endif()
 
