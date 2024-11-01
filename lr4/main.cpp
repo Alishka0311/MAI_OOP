@@ -2,10 +2,10 @@
 #include <memory>
 #include "include/point.h"
 #include "include/figure.h"
-#include "include/rectangle.h" // Подключите реализацию Rectangle
-#include "include/square.h"    // Подключите реализацию Square
-#include "include/trap.h"      // Подключите реализацию Trapezoid
-#include "include/array.h"     // Подключите реализацию Array
+#include "include/rectangle.h"  
+#include "include/square.h"     
+#include "include/trap.h"      
+#include "include/array.h"      
 
 // Функция для ввода фигуры
 std::shared_ptr<Figure<double>> createFigure() {
@@ -38,7 +38,6 @@ std::shared_ptr<Figure<double>> createFigure() {
 int main() {
     Array<Figure<double>> figures; // Динамический массив для хранения фигур
 
-    // Ввод фигур
     char more;
     do {
         auto figure = createFigure();
@@ -57,7 +56,7 @@ int main() {
 
         Point<double> center = figures[i]->center();
         std::cout << "Геометрический центр: (" << center.getX() << ", " << center.getY() << ")" << std::endl;
-        figures[i]->print(std::cout); // Предполагается, что метод print() существует в классе Figure
+        figures[i]->print(std::cout);  
     }
 
     // Общая площадь фигур
