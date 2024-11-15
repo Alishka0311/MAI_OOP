@@ -1,0 +1,1 @@
+/usr/local/bin/c++  -Werror=maybe-uninitialized -Wno-psabi CMakeFiles/main.dir/main.cpp.o CMakeFiles/main.dir/src/MemoryPool.cpp.o CMakeFiles/main.dir/src/CustomQueue.cpp.o -o main 
